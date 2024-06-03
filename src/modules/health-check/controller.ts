@@ -4,11 +4,11 @@ export type HealthCheckController = {
   get: RequestHandler
 }
 
-export const HealthCheckController: HealthCheckController = {
-  get: (req, res) => {
-    res.json({
-      message: 'Up and running',
-      uptime: process.uptime()
-    })
-  }
+const get: RequestHandler = (req, res) => {
+  res.json({
+    message: 'Up and running',
+    uptime: process.uptime()
+  })
 }
+
+export const HealthCheckController: HealthCheckController = { get }
