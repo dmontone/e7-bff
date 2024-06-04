@@ -2,7 +2,7 @@ import express from 'express'
 import { router } from './router'
 import Monitor from 'express-status-monitor'
 
-const app = express()
+export const app = express()
 const monitor = Monitor()
 
 app.use(router)
