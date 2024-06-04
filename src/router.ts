@@ -1,6 +1,8 @@
 import { Router } from 'express'
-import { HealthCheckModule } from './modules'
+import { HealthCheckModule, JobsModule } from './modules'
 
 export const router = Router()
 
-router.get('/',  HealthCheckModule)
+router.use('/',       HealthCheckModule)
+router.use('/jobs',   JobsModule)
+

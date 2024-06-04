@@ -10,4 +10,4 @@ app.use(logger)
 app.use(monitor)
 app.use(router)
 
-app.listen(3000, () => console.info('Server listening on port 3000'))
+export const server = app.listen(0, () => console.info('Server listening on port'))
