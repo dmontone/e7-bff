@@ -1,12 +1,16 @@
 import { RequestHandler } from 'express'
+import { JobsService } from './service'
 
 export type JobsController = {
   get: RequestHandler
 }
 
-const get: RequestHandler = (_, res) => {
+const get: RequestHandler = async (_, res) => {
+  const svc = JobsService()
+  const response = await svc.get()
+
   res.json({
-    message: 'Jobs',
+    data: response,
   })
 }
 
