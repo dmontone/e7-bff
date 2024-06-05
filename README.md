@@ -43,3 +43,17 @@ npm run build
 npm run serve
 ```
 The server will start on port 3000 with production bundle
+
+### How to run a [Docker](https://www.docker.com/products) version
+1. Build the docker image by running the following command on your terminal
+```bash
+docker build -t e7-bff .
+```
+
+2. Run the docker container with the following command on your terminal
+```bash
+docker run -p 3000:3000 -d e7-bff
+```
+
+This will start the application within a docker container and you could use the url `http://localhost:3000` to connect to the API server
+
