@@ -1,9 +1,12 @@
 import { RequestHandler } from 'express'
 
 export const ResponseSender: RequestHandler = (_, res) => {
-  const { status, data, meta } = res.locals
+  const { status, data, page, perPage, total } = res.locals
 
-  const message = { status, data, meta }
+  const message: { [key: string]: any } = { status, data }
+
+  if (page)
+    message.meta = { page, perPage, total }
 
   res.status(200)
   res.json(message)

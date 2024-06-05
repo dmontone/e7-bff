@@ -1,7 +1,7 @@
 import { Router } from 'express'
 import { JobsController } from './controller'
-import { ResponseSender } from '../../middlewares/response-sender'
+import { Pagination, ResponseSender } from '../../middlewares'
 
 export const JobsModule = Router()
 
-JobsModule.get('/', JobsController.get, ResponseSender)
+JobsModule.get('/', JobsController.get, Pagination, ResponseSender)
