@@ -7,10 +7,10 @@ export type JobsController = {
 
 const get: RequestHandler = async (_, res, next) => {
   const svc = JobsService()
-  const response = await svc.get()
+  const { jobs } = await svc.get()
 
   res.locals.status = 200
-  res.locals.data = response
+  res.locals.data = jobs
 
   next()
 }
