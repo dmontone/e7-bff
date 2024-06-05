@@ -6,6 +6,9 @@ This repository is a sample implementation of a BFF architecture using Node.js a
 
 - `/` - Simple healthcheck endpoint implementation
 - `/jobs` - Empty jobs endpoint implementation
+  - `search` _string_ // filter job titles
+  - `page` _number_ // current page
+  - `page` _number_ // amount of items in each page
 - `/status` - Monitor tool implementation ([express-status-monitor](https://github.com/RafalWilinski/express-status-monitor))
 
 ### 📖 How to use this repository
